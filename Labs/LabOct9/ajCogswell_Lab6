@@ -1,0 +1,86 @@
+numberList = []
+oddNums = []
+evenNums = []
+# numToAdd = 0
+# numOfNums = 0
+
+# numOfNums = int(input("How many numbers will you be adding to the list: "))
+
+# for i in range(numOfNums):
+#     numToAdd = int(input("Enter a number: "))
+#     numberList.append(numToAdd)
+
+# print(numberList)
+
+# while len(numberList) < numOfNums:
+#     numToAdd = int(input("Enter a number: "))
+#     numberList.append(numToAdd)
+
+# print(numberList)
+
+#---------------------------------------------
+
+# numberList = input("Enter numbers, seperated by /, : ").split(",")
+# sum = 0
+# average = 0
+# min = 0
+# max = 0
+# print(numberList)
+
+# count = 0
+# for i in numberList:
+#     num = numberList[count]
+#     num = int(num)
+#     numberList[count] = num
+#     count+=1
+
+# for i in numberList:
+
+#     if i%2 == 0:
+#         evenNums.append(i)
+#     elif i%2==1:
+#         oddNums.append(i)
+
+#     if min == 0:
+#         min = i
+#     elif i < min:
+#         min = i
+    
+#     if max == 0:
+#         max = i
+#     elif i > min:
+#         max = i
+    
+#     sum = sum + i
+
+# average = sum/len(numberList)
+# print(f"Sum: {sum}")
+# print(f"Average: {average}")
+# print(f"Min: {min}")
+# print(f"max: {max}")
+# print()
+# print(f"Even Numbers: {evenNums}, Count: {len(evenNums)}")
+# print(f"Odd Numbers: {oddNums}, Count: {len(oddNums)}")
+
+
+EXPERIMENT_RESULTS = [
+['A-101', 'Control', [15, 18, 22, 25]],
+['B-205', 'Variant', [12, 14, 17, 20]],
+['C-330', 'Control', [16, 19, 23, 27]],
+['D-410', 'Variant', [10, 11, 13, 15]]
+]
+
+variant_groups = []
+a101_late_measurements = []
+c330_summary = []
+b205_mid_test_readings = []
+variant_groups.append(EXPERIMENT_RESULTS[1])
+variant_groups.append(EXPERIMENT_RESULTS[3])
+
+a101_late_measurements = EXPERIMENT_RESULTS[0][2][1:]
+c330_summary.append(EXPERIMENT_RESULTS[2][0])
+c330_summary.append(EXPERIMENT_RESULTS[2][2][-1])
+b205_mid_test_readings.append(EXPERIMENT_RESULTS[1][2][1:3])
+
+print(b205_mid_test_readings)
+
