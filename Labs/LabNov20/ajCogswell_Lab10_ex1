@@ -1,0 +1,12 @@
+with open('employeedata.txt', 'a') as myFile:
+    empName = input("Input name: ")
+    empID = input("Input employee ID: ")
+    empPay = float(input("Input hourly pay: "))
+    withholdings = .23
+    netPay = empPay * (1 - withholdings)
+    payList = [empName, empID, empPay, netPay]
+    myFile.write(str(payList))
+
+def search(id):
+    with open('employeedata.txt', 'a') as myFile:
+        myFile.readline()
