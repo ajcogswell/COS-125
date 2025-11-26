@@ -1,8 +1,0 @@
-[CITY]
-people:11000
-pets:5200
-pests:1000
-[FARM]
-people:55
-livestock:230
-pests:18
