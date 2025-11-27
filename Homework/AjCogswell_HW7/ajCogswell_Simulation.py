@@ -8,7 +8,6 @@ import random as rand
 # Description: Simulation of weather changes on local populations. Stores each turn within history.txt, and updates state.txt for next session.
 # Collaborations: None
 
-
 def main():
     replay = None
     savePresent = checkSave()
@@ -54,7 +53,6 @@ def main():
         else:
             print("Invalid selection")
 
-
 def worldSetup(scene):
     startFile = "starterFile.txt"
     cityDict = {}
@@ -90,7 +88,6 @@ def worldSetup(scene):
     else:
         print("Something went wrong-- try re-running the program.")
 
-
 def worldChoice():
     environment = (
         input(
@@ -107,7 +104,6 @@ def worldChoice():
         print("Invalid selection. Please type 'city' or 'farm'.")
         return False
 
-
 def getDeathBirthRate():
     birthRate = 0
     deathRate = 0
@@ -122,7 +118,6 @@ def getDeathBirthRate():
         )
 
     return birthRate, deathRate
-
 
 def weatherSetup():
     weatherFile = "weather.csv"
@@ -155,7 +150,6 @@ def weatherSetup():
     maxTurns = len(listA)
 
     return weatherDict, maxTurns
-
 
 def weatherImpact(masterDict, world):
     lowRainfall = 1.0
@@ -223,7 +217,6 @@ def weatherImpact(masterDict, world):
 
     return masterDict
 
-
 def pestControl(humanPop, animalPop, pestPop):
     decrease = 0.05
     if ((humanPop + animalPop) * 1.3) < pestPop:
@@ -231,7 +224,6 @@ def pestControl(humanPop, animalPop, pestPop):
         humanPop = (humanPop - (humanPop * decrease)) // 1
         pestPop = (pestPop - (pestPop * decrease)) // 1
     return (humanPop, animalPop, pestPop)
-
 
 def updateHistory(
     masterDict,
@@ -246,7 +238,7 @@ def updateHistory(
     maxTurns,
     world,
     animalName,
-):
+    ):
     historyFile = "history.txt"
     saveFile = "state.txt"
     with open(historyFile, "a") as f:
@@ -256,13 +248,11 @@ def updateHistory(
             f"World:{world}\nhumans:{humanPop}\n{animalName}:{animalPop}\npests:{pestPop}\nbirthRate:{birthRate}\ndeathRate:{deathRate}\nTurn:{turn}\nRainfall_cm:{rainfall}\nHeat_C:{temperature}\nmaxTurns:{maxTurns}"
         )
 
-
 def checkSave():
     saveFile = "state.txt"
     with open(saveFile, "r") as f:
         content = f.read(1)
         return bool(content)
-
 
 def loadSession():
     saveDict = dict()
@@ -317,6 +307,5 @@ def loadSession():
         },
     }
     return masterDict
-
 
 main()
