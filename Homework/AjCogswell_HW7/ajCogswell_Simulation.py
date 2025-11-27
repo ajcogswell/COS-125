@@ -10,9 +10,8 @@ import random as rand
 def main():
     replay = None
     savePresent = checkSave()
-
     if savePresent:
-        while replay != True and replay != False:
+        while replay is None:
             userInput = input("Would you like to resume your last session? ").lower()
             if userInput == 'yes' or userInput == 'y':
                 replay = True
@@ -26,7 +25,7 @@ def main():
     masterDict = dict()
     world = False
 
-    if replay == False:
+    if not replay:
         while world != '[CITY]' and world != '[FARM]': 
             world = worldChoice()
         weatherDict, maxTurns = weatherSetup()
@@ -39,13 +38,13 @@ def main():
         masterDict['simRules']['birthRate'] = birthRate
         masterDict['simRules']['deathRate'] = deathRate
         masterDict['simRules']['Turn'] = 0
-    elif replay == True:
+    elif replay:
         masterDict = loadSession()
         world = list(masterDict['World'].keys())[0]
     
     playing = True
     masterDict = weatherImpact(masterDict, world)
-    while playing == True:
+    while playing:
         keepPlaying = input("Would you like to keep simulating? ").lower()
         if keepPlaying == 'yes' or keepPlaying == 'y':
             masterDict = weatherImpact(masterDict, world)
