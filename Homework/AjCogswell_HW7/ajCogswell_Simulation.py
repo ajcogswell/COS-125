@@ -30,7 +30,7 @@ def main():
         while world != "[CITY]" and world != "[FARM]":
             world = worldChoice()
         weatherDict, maxTurns = weatherSetup()
-        worldDict = worldSetup(world)  # pyright: ignore[reportGeneralTypeIssues]
+        worldDict = worldSetup(world)
         birthRate, deathRate = getDeathBirthRate()
         masterDict["simRules"] = dict()
         masterDict["World"] = worldDict
