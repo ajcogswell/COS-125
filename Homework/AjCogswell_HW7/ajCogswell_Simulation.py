@@ -89,13 +89,7 @@ def worldSetup(scene):
         print("Something went wrong-- try re-running the program.")
 
 def worldChoice():
-    environment = (
-        input(
-            "Are we simulating weather within the city, or the farm? type 'city' or 'farm': \n"
-        )
-        .strip()
-        .upper()
-    )
+    environment = input("Are we simulating weather within the city, or the farm? type 'city' or 'farm': \n").strip().upper()
 
     if environment == "CITY" or environment == "FARM":
         return f"[{environment}]"
@@ -109,13 +103,9 @@ def getDeathBirthRate():
     deathRate = 0
 
     while birthRate < 1 or birthRate > 100:
-        birthRate = int(
-            input("Please provide a general birth rate for the simulation (1-100): ")
-        )
+        birthRate = int(input("Please provide a general birth rate for the simulation (1-100): "))
     while deathRate < 1 or deathRate > 100:
-        deathRate = int(
-            input("Please provide a general death rate for the simulation (1-100): ")
-        )
+        deathRate = int(input("Please provide a general death rate for the simulation (1-100): "))
 
     return birthRate, deathRate
 

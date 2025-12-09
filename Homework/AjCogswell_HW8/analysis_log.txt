@@ -1,0 +1,6 @@
+File analyzed: simplifiedTelemetry500.txtTotal pulses analyzed: 535
+Target subsystem: G
+Overall max: 96.25
+Overall min: 0.009
+Subsystem max: 0.182
+Subsystem min: 0.009
